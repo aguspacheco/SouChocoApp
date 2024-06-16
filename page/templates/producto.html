@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block content %}
+<div>
+  <ul>
+    {% for producto in productos %}
+    <img src="{{ producto.imagen.url }}" class="product-image" />
+    <p class="product-description">{{ producto.descripcion }}</p>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

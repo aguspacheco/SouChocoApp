@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SouChoco🍫</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <img src="{% static 'logo.png' %}" alt="" />
+      </div>
+      <ul class="nav-list">
+        <li>
+          <a href="{% url 'principal' %}">Nosotros</a>
+        </li>
+        <li>
+          <a href="#">Productos</a>
+          <ul class="dropdown">
+            <li><a href="{% url 'producto' categoria='Alfajores' %}">Alfajores</a></li>
+            <li><a href="{% url 'producto' categoria='Budines' %}">Budines</a></li>
+            <li><a href="{% url 'producto' categoria='Alfacokies' %}">Alfacookies</a></li>
+            <li>
+              <a href="{% url 'producto' categoria='Galletas' %}">Galletas</a>
+            </li>
+            <li><a href="{% url 'producto' categoria='Chocotorta' %}">Chocotorta</a></li>
+            <li><a href="{% url 'producto' categoria='Brownies' %}">Brownies</a></li>
+            <li>
+              <a href="{% url 'producto' categoria='Galletas Personalizadas' %}"
+                >Galletas personalizadas</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="{% url 'simulador' %}">Simulador de Pedidos</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container">{% block content %} {% endblock %}</div>
+
+    <footer>
+      <div class="redes">
+        <p>Seguinos en nuestras redes</p>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/souchoco.2023?locale=es_LA" target="">
+          <img src="{% static 'facebook.png' %}" alt="" />
+        </a>
+        <a href="https://www.instagram.com/souchoco/" target="">
+          <img src="{% static 'instagram.png' %}" alt="" />
+        </a>
+      </div>
+      <p>&copy; 2024 SouChoco. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>
